@@ -10,6 +10,18 @@ namespace TorchBridgeSolutionsConsoleApp.Simulator
         private string _crossingInformation;
         private int _crossingTime;
 
+        public Bridge(List<Person> personsOnLeftSide)
+        {
+            _crossingTime = 0;
+            _crossingInformation = string.Empty;
+            _personsOnRightSide = new List<Person>();
+            _personsOnLeftSide = new List<Person>();
+            if (personsOnLeftSide != null || personsOnLeftSide.Count == 0)
+                _personsOnLeftSide.AddRange(personsOnLeftSide);
+            else
+                throw new InvalidOperationException("There are no people that need to cross the bridge.");
+        }
+
         public Bridge(List<Person> personsOnLeftSide, List<Person> personsOnRightSide, int crossingTime)
         {
             _crossingTime = crossingTime;

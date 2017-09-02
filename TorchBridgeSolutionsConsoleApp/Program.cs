@@ -21,7 +21,7 @@ namespace TorchBridgeSolutionsConsoleApp
                 person4
             };
 
-            var bridge = new Bridge(persons, null, 0);
+            var bridge = new Bridge(persons);
             var coordinator = new Coordinator(bridge);
 
             Console.WriteLine("Torch Bridge Problem Simulator: \r\n");
